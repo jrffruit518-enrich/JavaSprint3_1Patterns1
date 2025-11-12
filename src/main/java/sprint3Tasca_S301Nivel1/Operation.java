@@ -22,7 +22,7 @@ public class Operation {
                 case 2 -> Undo.getInstance().undoCommand();
                 case 3 -> Undo.getInstance().showCommandHistory();
                 case 4 -> exit = true;
-                default -> System.out.println("Your option is invalid,please try again.");
+                default -> System.out.println("Your option is invalid. Please try again.");
             }
         }
         System.out.println("Thank you for using this program.");
