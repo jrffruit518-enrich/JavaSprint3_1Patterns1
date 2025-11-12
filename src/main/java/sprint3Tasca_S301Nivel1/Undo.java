@@ -1,29 +1,30 @@
 package sprint3Tasca_S301Nivel1;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.ArrayDeque;
 import java.util.List;
 
 public class Undo {
-    private List<String> commands = new ArrayList<>();
+    private Deque<String> commands = new ArrayDeque<>();
 
-    public Undo() {
+    private Undo() {
     }
     private static class  UndoInstance{
         private static final Undo undo = new Undo();
     }
-    public static synchronized Undo getInstance(){
+    public static Undo getInstance(){
         return UndoInstance.undo;
     }
 
-    public void addCommand() {
-        String command = EntryString_Int.readString();
-        this.commands.add(command);
+    public void addCommand(String command) {
+        this.commands.push(command);
     }
 
     public void undoCommand() {
         if (!this.commands.isEmpty()) {
-            this.commands.removeLast();
-            System.out.println("The last command has been undo.");
+            String undo = commands.pop();
+            System.out.println("Undo :" + undo);
         } else {
             System.out.println("There is no command to undo.");
         }
@@ -35,8 +36,7 @@ public class Undo {
             this.commands.forEach(System.out::println);
             System.out.println("*************");
         } else {
-            System.out.println("There is no command to undo.");
+            System.out.println("No commands in history.");
         }
     }
-
 }
