@@ -10,6 +10,7 @@ public class Opration {
     public static void menu() {
         boolean exit = false;
         while (!exit) {
+            System.out.println();
             System.out.println("*********MENU*********");
             System.out.println("1,Add command");
             System.out.println("2,Undo command");
@@ -18,11 +19,13 @@ public class Opration {
 
             int option = EntryString_Int.readInt("Please enter your choice.");
             switch (option) {
-                case 1 ->
+                case 1 -> Undo.getInstance().addCommand();
+                case 2 -> Undo.getInstance().undoCommand();
+                case 3 -> Undo.getInstance().showCommandHistory();
+                case 4 -> exit = true;
+                default -> System.out.println("Your option is invalid,please try again.");
             }
-
-
         }
+        System.out.println("Thank you for using this program.");
     }
-
 }
