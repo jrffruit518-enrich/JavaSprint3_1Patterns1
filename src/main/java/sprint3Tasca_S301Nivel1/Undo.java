@@ -1,9 +1,8 @@
 package sprint3Tasca_S301Nivel1;
 
-import java.util.ArrayList;
 import java.util.Deque;
 import java.util.ArrayDeque;
-import java.util.List;
+
 
 public class Undo {
     private Deque<String> commands = new ArrayDeque<>();
@@ -18,7 +17,11 @@ public class Undo {
     }
 
     public void addCommand(String command) {
-        this.commands.push(command);
+        if (command != null && !command.trim().isEmpty()) {
+            this.commands.push(command);
+        } else {
+            System.out.println("Please enter valid command.");
+        }
     }
 
     public void undoCommand() {
