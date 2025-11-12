@@ -3,12 +3,12 @@ package sprint3Tasca_S301Nivel1;
 import java.util.Scanner;
 
 public class EntryString_Int {
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     public static String readString() {
         while (true) {
-            String value = sc.nextLine();
-            if (value.trim().isEmpty()) {
+            String value = sc.nextLine().trim();
+            if (value.isEmpty()) {
                 System.out.println("The value can not be void.");
                 continue;
             }
