@@ -14,16 +14,26 @@ public class Undo {
     public static synchronized Undo getInstance(){
         return UndoInstance.undo;
     }
-    public void add(String command) {
+
+    public void addCommand() {
+        String command = EntryString_Int.readString();
         this.commands.add(command);
     }
 
-    public void undo() {
-        this.commands.removeLast();
+    public void undoCommand() {
+        if (!this.commands.isEmpty()) {
+            this.commands.removeLast();
+        } else {
+            System.out.println("There is no command to undo.");
+        }
     }
 
-    public void history() {
-        this.commands.forEach(System.out::println);
+    public void showCommandHistory() {
+        if (!this.commands.isEmpty()) {
+            this.commands.forEach(System.out::println);
+        } else {
+            System.out.println("There is no command to undo.");
+        }
     }
 
 }
