@@ -8,7 +8,7 @@ package sprint3Tasca_S301Nivel２;
  * Create:13/11/2025 - 22:03
  * Version:v1.0
  */
-public interface ContactFactory {
+public interface Factory {
     public Address createAddress();
     public PhoneNumber createPhoneNumber();
 }
