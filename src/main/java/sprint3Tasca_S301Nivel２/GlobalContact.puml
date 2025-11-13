@@ -1,0 +1,35 @@
+@startuml
+interface ContactFactory{
+  + createAddress(): Address
+  + createPhone(): PhoneNumber
+}
+Class SpainFactory implements ContactFactory
+Class USAFactory implements ContactFactory
+
+interface Address{
+  + getFormatted(): String
+
+}
+Class SpainAddress implements Address
+Class USAAddress implements Address
+interface PhoneNumber{
+  + getFormatted(): String
+}
+
+Class SpainPhoneNumber implements PhoneNumber
+Class USAPhoneNumber implements PhoneNumber
+
+SpainFactory --> SpainAddress
+SpainFactory --> SpainPhoneNumber
+USAFactory --> USAAddress
+USAFactory --> USAPhoneNumber
+
+class GlobalContactBook {
+  - factory: ContactFactory
+  + addContact(address: Address, phoneNumber: PhoneNumber)
+  + setFactory(factory: ContactFactory)
+}
+GlobalContactBook --> ContactFactory : uses
+
+@enduml
+
