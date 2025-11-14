@@ -10,8 +10,16 @@ package sprint3Tasca_S301Nivel２;
  */
 public class AddressData {
  private String streetAndNumber;
+ private String city;
  private String postCode;
  private String province;
+
+    public AddressData(String streetAndNumber,String city, String postCode, String province) {
+        this.streetAndNumber = streetAndNumber;
+        this.city = city;
+        this.postCode = postCode;
+        this.province = province;
+    }
 
     public String getStreetAndNumber() {
         return streetAndNumber;
@@ -23,6 +31,10 @@ public class AddressData {
 
     public String getPostCode() {
         return postCode;
+    }
+
+    public String getCity() {
+        return city;
     }
 
     public void setPostCode(String postCode) {
