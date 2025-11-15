@@ -9,6 +9,7 @@ package sprint3Tasca_S301Nivel２;
  * Version:v1.0
  */
 public interface Factory {
-    public Address createAddress();
-    public PhoneNumber createPhoneNumber();
+    public Address createAddress(AddressData data);
+    public PhoneNumber createPhoneNumber(String phoneNumber);
+
 }
