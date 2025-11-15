@@ -29,12 +29,17 @@ public class AddressData {
         this.streetAndNumber = streetAndNumber;
     }
 
-    public String getPostCode() {
-        return postCode;
-    }
-
     public String getCity() {
         return city;
+    }
+
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostCode() {
+        return postCode;
     }
 
     public void setPostCode(String postCode) {

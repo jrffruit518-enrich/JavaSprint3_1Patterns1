@@ -10,14 +10,14 @@ package sprint3Tasca_S301Nivel２;
  */
 public class AddressSpain implements  Address{
     private final AddressData addressData;
+    private static final String COUNTRY = "Spain";
 
-    public AddressSpain(String streetAndNumber,String city,String postCode,String province ) {
-        addressData= new AddressData(streetAndNumber,city,postCode,province);
+    public AddressSpain(AddressData addressData ) {
+        this.addressData= addressData;
     }
 
     @Override
-    public String getformatted() {
-        String country = "Spain";
-        return addressData.getStreetAndNumber()+","+addressData.getPostCode()+","+addressData.getCity()+","+addressData.getProvince()+","+ country;
+    public String getFormatted() {
+        return addressData.getStreetAndNumber()+","+addressData.getPostCode()+","+addressData.getCity()+","+addressData.getProvince()+","+ COUNTRY;
     }
 }

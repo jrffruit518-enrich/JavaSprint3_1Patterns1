@@ -9,5 +9,5 @@ package sprint3Tasca_S301Nivel２;
  * Version:v1.0
  */
 public interface Address {
-    public String getformatted();
+    public String getFormatted();
 }

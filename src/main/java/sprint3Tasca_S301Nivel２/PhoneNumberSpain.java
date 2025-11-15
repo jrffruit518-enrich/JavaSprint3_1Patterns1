@@ -10,14 +10,13 @@ package sprint3Tasca_S301Nivel２;
  */
 public class PhoneNumberSpain implements PhoneNumber{
     private final String phoneNumber;
-
+    private static final String COUNTRYCODE = "+34";
     public PhoneNumberSpain(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     @Override
-    public String getformatted() {
-        String countryCode = "+34";
-        return countryCode +" "+ phoneNumber;
+    public String getFormatted() {
+        return COUNTRYCODE +" "+ phoneNumber;
     }
 }

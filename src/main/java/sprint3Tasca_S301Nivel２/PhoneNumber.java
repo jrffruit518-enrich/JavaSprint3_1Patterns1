@@ -9,5 +9,5 @@ package sprint3Tasca_S301Nivel２;
  * Version:v1.0
  */
 public interface PhoneNumber {
-    public String getformatted();
+    public String getFormatted();
 }
