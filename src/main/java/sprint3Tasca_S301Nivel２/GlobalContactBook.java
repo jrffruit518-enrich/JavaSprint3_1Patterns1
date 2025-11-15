@@ -40,9 +40,6 @@ public class GlobalContactBook {
     }
 
     public void showContactBook() {
-        Iterator<Contact> iterator = contactBook.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+        this.contactBook.forEach(System.out::println);
     }
 }
