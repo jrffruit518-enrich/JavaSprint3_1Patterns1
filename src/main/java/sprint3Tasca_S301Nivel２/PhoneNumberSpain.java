@@ -9,8 +9,7 @@ package sprint3Tasca_S301Nivel２;
  * Version:v1.0
  */
 public class PhoneNumberSpain implements PhoneNumber{
-    private CountryCode countryCode = CountryCode.SPAIN;
-    private String phoneNumber;
+    private final String phoneNumber;
 
     public PhoneNumberSpain(String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -18,6 +17,7 @@ public class PhoneNumberSpain implements PhoneNumber{
 
     @Override
     public String getformatted() {
-        return countryCode+" "+ phoneNumber;
+        String countryCode = "+34";
+        return countryCode +" "+ phoneNumber;
     }
 }
