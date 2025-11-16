@@ -1,4 +1,10 @@
-package sprint3Tasca_S301Nivel２;
+package sprint3Tasca_S301Nivel２.factory;
+
+import sprint3Tasca_S301Nivel２.phoneNumber.PhoneNumber;
+import sprint3Tasca_S301Nivel２.phoneNumber.PhoneNumberUSA;
+import sprint3Tasca_S301Nivel２.address.Address;
+import sprint3Tasca_S301Nivel２.address.AddressData;
+import sprint3Tasca_S301Nivel２.address.AddressUSA;
 
 /**
  * ClassName: FactoryUSA
