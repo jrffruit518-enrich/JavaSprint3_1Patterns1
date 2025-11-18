@@ -1,0 +1,93 @@
+@startuml
+interface Command {
+  +execute(): void
+  +undo(): void
+}
+
+interface Vehicle {
+  +start(): void
+  +accelerate(): void
+  +brake(): void
+}
+
+class Car <<Receiver>> implements Vehicle
+class Bicycle <<Receiver>> implements Vehicle
+class Airplane <<Receiver>> implements Vehicle
+class Ship <<Receiver>> implements Vehicle
+
+abstract class AbstractVehicleCommand implements Command {
+  - vehicle: Vehicle
+  + AbstractVehicleCommand(vehicle: Vehicle)
+}
+
+
+class CarStartCommand extends AbstractVehicleCommand
+class CarAccelerateCommand extends AbstractVehicleCommand
+class CarBrakeCommand extends AbstractVehicleCommand
+
+
+class BicycleStartCommand extends AbstractVehicleCommand
+class BicycleAccelerateCommand extends AbstractVehicleCommand
+class BicycleBrakeCommand extends AbstractVehicleCommand
+
+
+class AirplaneStartCommand extends AbstractVehicleCommand
+class AirplaneAccelerateCommand extends AbstractVehicleCommand
+class AirplaneBrakeCommand extends AbstractVehicleCommand
+
+
+class ShipStartCommand extends AbstractVehicleCommand
+class ShipAccelerateCommand extends AbstractVehicleCommand
+class ShipBrakeCommand extends AbstractVehicleCommand
+
+' Null Object
+class NoCommand implements Command {
+  +execute(): void
+  +undo(): void
+}
+
+' Invoker
+class RemoteControl {
+  - startCommands: Command[4]
+  - accelerateCommands: Command[4]
+  - brakeCommands: Command[4]
+  - undoCommand: Command
+  + setCommand(slot: int, startCmd: Command, accelCmd: Command, brakeCmd: Command)
+  + pressStartButton(slot: int)
+  + pressAccelerateButton(slot: int)
+  + pressBrakeButton(slot: int)
+  + pressUndoButton()
+}
+
+' Client
+class Client
+
+
+Car <.. CarStartCommand : <<create>>
+Car <.. CarAccelerateCommand
+Car <.. CarBrakeCommand
+
+Bicycle <.. BicycleStartCommand : <<create>>
+Bicycle <.. BicycleAccelerateCommand
+Bicycle <.. BicycleBrakeCommand
+
+Airplane <.. AirplaneStartCommand : <<create>>
+Airplane <.. AirplaneAccelerateCommand
+Airplane <.. AirplaneBrakeCommand
+
+Ship <.. ShipStartCommand : <<create>>
+Ship <.. ShipAccelerateCommand
+Ship <.. ShipBrakeCommand
+
+RemoteControl o--> Command
+RemoteControl o--> NoCommand
+Client --> RemoteControl
+
+note right of RemoteControl
+  slot 0: car
+  slot 1: bicycle
+  slot 2: airplane
+  slot 3: ship
+end note
+
+@enduml
