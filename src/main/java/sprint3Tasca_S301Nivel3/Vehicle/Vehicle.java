@@ -1,4 +1,4 @@
-package sprint3Tasca_S301Nivel3;
+package sprint3Tasca_S301Nivel3.Vehicle;
 
 public interface Vehicle {
     public void start();
