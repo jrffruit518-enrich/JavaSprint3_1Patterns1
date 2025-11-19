@@ -1,9 +1,9 @@
-package sprint3Tasca_S301Nivel3.Vehicle;
+package sprint3Tasca_S301Nivel3.vehicle;
 
-public class Airplane implements Vehicle {
+public class Car implements Vehicle{
     private final String name;
 
-    public Airplane(String name) {
+    public Car(String name) {
         this.name = name;
     }
 
@@ -21,5 +21,4 @@ public class Airplane implements Vehicle {
     public void brake() {
         System.out.println(this.name + " has been braked");
     }
-
 }

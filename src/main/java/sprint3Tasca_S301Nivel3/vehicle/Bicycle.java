@@ -1,9 +1,9 @@
-package sprint3Tasca_S301Nivel3.Vehicle;
+package sprint3Tasca_S301Nivel3.vehicle;
 
-public class Car implements Vehicle{
+public class Bicycle implements Vehicle{
     private final String name;
 
-    public Car(String name) {
+    public Bicycle(String name) {
         this.name = name;
     }
 
